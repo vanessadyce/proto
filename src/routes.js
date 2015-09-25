@@ -10,7 +10,9 @@ import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
-import PhysicsPage from './components/Physics'
+import PhysicsPage from './components/Physics';
+import PsychologyPage from './components/Psychology';
+import CSPage from './components/CompSci'
 
 const router = new Router(on => {
   on('*', async (state, next) => {
@@ -25,6 +27,10 @@ const router = new Router(on => {
   on('/register', async () => <RegisterPage />);
 
   on('/physics', async () => <PhysicsPage />);
+
+  on('/psychology', async () => <PsychologyPage />);
+
+  on('/cs', async () => <CSPage />);
 
   on('*', async (state) => {
     const content = await http.get(`/api/content?path=${state.path}`);
